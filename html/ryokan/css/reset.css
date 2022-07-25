@@ -1,0 +1,731 @@
+/*
+YUI 3.18.1 (build f7e7bcb)
+Copyright 2014 Yahoo! Inc. All rights reserved.
+Licensed under the BSD License.
+http://yuilibrary.com/license/
+*/
+/*
+	TODO will need to remove settings on HTML since we can't namespace it.
+	TODO with the prefix, should I group by selector or property for weight savings?
+*/
+html {
+	color: #000;
+	background: #FFF;
+}
+
+body,
+div,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+pre,
+code,
+form,
+fieldset,
+legend,
+input,
+textarea,
+p,
+blockquote,
+th,
+td {
+	margin: 0;
+	padding: 0;
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+fieldset,
+img {
+	border: 0;
+}
+
+/*
+	TODO think about hanlding inheritence differently, maybe letting IE6 fail a bit...
+*/
+address,
+caption,
+cite,
+code,
+dfn,
+em,
+strong,
+th,
+var {
+	font-style: normal;
+	font-weight: normal;
+}
+
+ol,
+ul {
+	list-style: none;
+}
+
+caption,
+th {
+	text-align: left;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-size: 100%;
+	font-weight: normal;
+}
+
+q:before,
+q:after {
+	content: '';
+}
+
+abbr,
+acronym {
+	border: 0;
+	font-variant: normal;
+}
+
+/* to preserve line-height and selector appearance */
+sup {
+	vertical-align: text-top;
+}
+
+sub {
+	vertical-align: text-bottom;
+}
+
+input,
+textarea,
+select {
+	font-family: inherit;
+	font-size: inherit;
+	font-weight: inherit;
+	*font-size: 100%;
+	/*to enable resizing for IE*/
+}
+
+/*because legend doesn't inherit in IE */
+legend {
+	color: #000;
+}
+
+/* YUI CSS Detection Stamp */
+#yui3-css-stamp.cssreset {
+	display: none;
+}
+
+/* 共通クラス */
+body {
+	font-family: “Times New Roman”, “游明朝”, “Yu Mincho”, “游明朝体”, “YuMincho”,
+		“ヒラギノ明朝 Pro W3”, “Hiragino Mincho Pro”, “HiraMinProN-W3”, “HGS明朝E”,
+		“ＭＳ Ｐ明朝”, “MS PMincho”, serif;
+	font-size: 100%;
+	width: 100%;
+}
+
+img {
+	width: 100%;
+}
+
+a {
+	text-decoration: none;
+	color: black;
+}
+
+li {
+	list-style: none;
+}
+
+.inner {
+	max-width: 1180px;
+	margin: 0 auto;
+	padding: 0 16px;
+}
+
+main {
+	letter-spacing: 0.1em;
+}
+
+.title {
+	font-size: 2.25em;
+	margin-bottom: 30px;
+}
+
+.logo-img {
+	width: 40px;
+	height: 40px;
+	margin-bottom: 20px;
+}
+
+.sp_only {
+	display: none;
+}
+
+.min_only {
+	display: none;
+}
+
+/* header */
+/* ------------------------------
+header
+------------------------------ */
+.header {
+	width: 100%;
+	height: 90px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	color: #fff;
+	letter-spacing: 0.3em;
+	position: absolute;
+}
+
+.header-left .border {
+	color: #fff;
+	position: relative;
+	z-index: 1;
+}
+
+.header-left .border:after {
+	content: "";
+	position: absolute;
+	left: 0;
+	bottom: -10px;
+	width: 0%;
+	height: 2px;
+	background: #fff;
+	z-index: -1;
+	transition: all 0.4s;
+}
+
+.header-left a:hover .border:after {
+	width: 100%;
+}
+
+.header-left {
+	display: flex;
+	align-items: center;
+	padding-left: 20px;
+}
+
+.header-left .header-logo {
+	margin-right: 100px;
+	z-index: 10;
+}
+
+.header-left nav ul {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.header-left nav ul li:not(:last-child) {
+	margin-right: 30px;
+}
+
+.header-left img {
+	width: 200px;
+	height: 40px;
+}
+
+.header-left img:hover {
+	opacity: 0.8;
+	transition: 0.5s;
+}
+
+.header-right {
+	z-index: 1;
+	padding-right: 20px;
+}
+
+.header-right a {
+	color: #fff;
+}
+
+.header-right a:hover {
+	opacity: 0.8;
+	transition: 0.5s;
+}
+
+.header-right .btn {
+	background-color: #978f10;
+	padding: 15px 40px;
+	display: block;
+	cursor: pointer;
+}
+
+.header-right img {
+	width: 22px;
+	height: 22px;
+	margin-right: 10px;
+	vertical-align: middle;
+}
+
+.fixed {
+	position: fixed;
+	background-color: #000;
+	transition: all .5s;
+	z-index: 100;
+}
+
+/* モーダル */
+
+/* ------------------------------
+modal
+------------------------------ */
+.modal-window {
+	display: none;
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	background-color: #fff;
+	padding: 30px 60px 90px;
+	z-index: 1000;
+	color: #000;
+}
+
+.modal-title {
+	text-align: center;
+	border-bottom: 1px solid #b6b6b6;
+	font-size: 1.25em;
+	color: rgb(29, 25, 25);
+	padding-bottom: 30px;
+	margin-bottom: 40px;
+}
+
+.modal-dl dt {
+	margin-bottom: 10px;
+}
+
+.modal-dl dd {
+	margin-bottom: 10px;
+}
+
+.modal-dl dd:last-child {
+	margin-bottom: 30px;
+}
+
+.modal-window dd input {
+	padding-left: 10px;
+}
+
+input,
+select {
+	width: 100%;
+	height: 40px;
+	border: 1px solid #e7e7e7;
+}
+
+select {
+	color: #797878;
+	padding-left: 5px;
+}
+
+.button {
+	text-align: center;
+}
+
+.button-close {
+	position: absolute;
+	top: 3px;
+	right: 5px;
+	background-color: #fff;
+	cursor: pointer;
+	font-size: 2em;
+	border: none;
+}
+
+.submit-button {
+	background: #fff;
+	display: inline-block;
+	color: #000;
+	padding: 0.75em 5em;
+	border: 1px solid #000;
+	margin-top: 20px;
+}
+
+.submit-button:hover {
+	background: #000;
+	color: #fff;
+	cursor: pointer;
+}
+
+.submit-click {
+	text-align: center;
+}
+
+.overlay {
+	display: none;
+	position: fixed;
+	top: 0;
+	left: 0;
+	background-color: rgba(0, 0, 0, 0.5);
+	width: 100%;
+	height: 100%;
+	z-index: 10;
+}
+
+.inner>ol {
+	margin-top: 20px;
+	letter-spacing: 0.1em;
+}
+
+.breadcrumb {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.breadcrumb li {
+	display: inline;
+	list-style: none;
+}
+
+.breadcrumb li:after {
+	content: ">";
+	padding: 0 0.2em;
+	color: #000;
+}
+
+.breadcrumb li:last-of-type::after {
+	content: "";
+}
+
+.breadcrumb li:last-child:after {
+	content: "";
+}
+
+.breadcrumb li a {
+	text-decoration: none;
+	color: #000;
+}
+
+.breadcrumb ol li a:hover {
+	text-decoration: underline;
+}
+
+.main_visual h2 {
+	color: #fff;
+	text-align: center;
+	line-height: 50vh;
+	font-size: 2.125em;
+	letter-spacing: 0.1em;
+}
+
+.content {
+	letter-spacing: 0;
+	line-height: 2em;
+}
+
+.content .txt-top {
+	text-align: center;
+	margin: 95px 0 75px;
+}
+
+.content ul {
+	width: 100%;
+}
+
+.content ul li {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	position: relative;
+	height: 350px;
+	margin-bottom: 20%;
+}
+
+.content ul li:nth-child(2) {
+	flex-direction: row-reverse;
+}
+
+.content ul li img {
+	width: 525px;
+	height: auto;
+	z-index: 1;
+}
+
+.content-ul li:after {
+	content: "";
+	padding: 0 0.2em;
+	color: #000;
+}
+/* ------------------------------
+access
+------------------------------ */
+.access {
+	background-image: url(../img/bg.png);
+	background-position: center;
+	background-size: cover;
+	padding: 60px 2%;
+	text-align: center;
+}
+
+.access h2 {
+	margin-bottom: 50px;
+}
+
+.access-box {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	text-align: left;
+	margin-bottom: 70px;
+}
+
+.access-img {
+	width: 70%;
+}
+
+.access-dl {
+	margin-left: 80px;
+}
+
+.access-dl dt,
+.access-dl dd {
+	margin-bottom: 10px;
+}
+
+.access .map {
+	width: 100%;
+}
+
+/* ------------------------------
+footer
+------------------------------ */
+#footer {
+	background-image: url(../img/bg3.png);
+	background-position: center;
+	background-size: cover;
+	padding: 60px 0;
+	text-align: center;
+}
+
+.footer-nav {
+	-ms-writing-mode: tb-rl;
+	writing-mode: vertical-rl;
+	text-align: start;
+	margin: 0 auto;
+	margin-bottom: 10em;
+	letter-spacing: 0.3em;
+}
+
+.footer-nav ul li+li {
+	margin-right: 20px;
+}
+
+#footer img {
+	width: 145px;
+	height: 92px;
+	margin-bottom: 5em;
+}
+
+.footer-txt p {
+	margin-bottom: 20px;
+}
+
+.footer-txt p:last-child {
+	margin-bottom: 0;
+}
+
+.footer-txt span {
+	margin-left: 20px;
+}
+
+/* ------------------------------
+copy
+------------------------------ */
+.copy {
+	background-color: black;
+	color: #fff;
+	letter-spacing: 0.1em;
+	text-align: center;
+	width: 100%;
+	height: 60px;
+	padding: 20px 0;
+	font-size: 0.75em;
+}
+
+/* ------------------------------
+レシポンシブ  
+------------------------------ */
+@media screen and (max-width: 768px) {
+	.pc_only {
+		display: none;
+	}
+
+	.sp_only {
+		display: block;
+	}
+
+	.logo-img {
+		margin-bottom: 0.5em;
+	}
+
+	.title {
+		font-size: 1.75em;
+		margin-bottom: 1.5em;
+	}
+
+	.header {
+		justify-content: flex-start;
+	}
+
+	.header-left img {
+		width: 150px;
+		height: auto;
+	}
+
+	.header-left .header-logo {
+		margin-right: 10px;
+	}
+
+	.header-right img {
+		width: 15px;
+		height: 15px;
+		margin-right: 5px;
+	}
+
+	.header-right .btn {
+		padding: 5px 10px;
+		font-size: 0.85em;
+	}
+
+	.menu-btn {
+		position: fixed;
+		top: 13px;
+		right: 0;
+		display: flex;
+		height: 60px;
+		width: 60px;
+		justify-content: center;
+		align-items: center;
+		z-index: 90;
+	}
+
+	.menu-btn span,
+	.menu-btn span:before,
+	.menu-btn span:after {
+		content: "";
+		display: block;
+		height: 3px;
+		width: 25px;
+		border-radius: 3px;
+		background-color: #ffffff;
+		position: absolute;
+	}
+
+	.menu-btn span:before {
+		bottom: 8px;
+	}
+
+	.menu-btn span:after {
+		top: 8px;
+	}
+
+	#menu-btn-check:checked~.menu-btn span {
+		background-color: rgba(255, 255, 255, 0);
+		transition: all 0.5s;
+	}
+
+	#menu-btn-check:checked~.menu-btn span::before {
+		bottom: 0;
+		transform: rotate(45deg);
+		transition: all 0.5s;
+	}
+
+	#menu-btn-check:checked~.menu-btn span::after {
+		top: 0;
+		transform: rotate(-45deg);
+		transition: all 0.5s;
+	}
+
+	#menu-btn-check {
+		display: none;
+	}
+
+	.menu-content {
+		width: 100%;
+		height: 100%;
+		position: fixed;
+		top: 0;
+		left: 100%;
+		z-index: 5;
+		background-color: #000;
+		transition: all 0.5s;
+	}
+
+	.menu-content ul {
+		padding: 50% 10px 0;
+		text-align: center;
+	}
+
+	.menu-content ul li {
+		list-style: none;
+	}
+
+	.menu-content ul li a {
+		display: block;
+		width: 100%;
+		font-size: 15px;
+		box-sizing: border-box;
+		color: #fff;
+		text-decoration: none;
+		padding: 9px 15px 10px 0;
+		position: relative;
+	}
+
+	.menu-content ul li a:hover {
+		cursor: pointer;
+	}
+
+	#menu-btn-check:checked~.menu-content {
+		left: 0;
+	}
+
+	.modal-window {
+		width: 50%;
+		padding: 20px 20px;
+		font-size: 0.85em;
+	}
+
+	.modal-title {
+		margin-bottom: 1em;
+	}
+
+	#footer img {
+		width: 100px;
+		height: auto;
+		margin-bottom: 5em;
+	}
+
+	.footer-txt {
+		letter-spacing: 0;
+	}
+
+		@media screen and (max-width: 460px) {
+			.modal-window {
+				width: 75%;
+			}
+	
+			.submit-button {
+				padding: 3% 25%;
+				white-space: nowrap;
+			}
+		}
+}

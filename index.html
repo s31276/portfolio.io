@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Urano Seiji</title>
+  <link rel="stylesheet" href="css/reset.css">
+  <link href="https://fonts.googleapis.com/css?family=Sawarabi+Mincho" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="header-left">
+      <h1 class="header-left__logo">URANO SEIJI</h1>
+      <div class="header-left__item anime-fuwafuwa"></div>
+    </div>
+    <div class="header-right">
+      <input type="checkbox" id="header-right__check">
+      <label for="header-right__check" class="header-right__btn"><span></span></label>
+      <div class="menu-content">
+        <nav>
+          <ul class="menu-content__ul">
+            <li class="menu-content__li"><a class="menu-content__a" href="#">HOME</a></li>
+            <li class="menu-content__li"><a class="menu-content__a" href="#about">ABOUT</a></li>
+            <li class="menu-content__li"><a class="menu-content__a" href="#work">WORK</a></li>
+            <li class="menu-content__li"><a class="menu-content__a" href="#contact">CONTACT</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="header-right__item anime-fuwafuwa"></div>
+    </div>
+  </header>
+  <main class="main">
+    <div class="sp-main">
+      <!-- mainVisual -->
+      <section class="main-visual">
+        <div class="main-visual__body">
+          <h1 class="main-visual__title">URANO SEIJI</h1>
+          <p class="main-visual__subtitle">Portfolio</p>
+          <div class="sp_only">
+            <img src="img/girl.png" alt="パソコンのイラスト" width="300px" height="300px">
+          </div>
+        </div>
+        <div class="main-visual__scrolldown"><span>SCROLL</span></div>
+      </section>
+      <!-- About -->
+      <section id="about" class="about inner">
+        <div class="about__body">
+          <h2 class="title">ABOUT</h2>
+          <p class="subtitle">- 私について -</p>
+          <p class="about__textbox heading">
+            長野県在住、24歳。<br>
+            半年ほど前からWeb業界に魅力を感じ<br>
+            独学でHTML/CSS/JavaScriptを<br>
+            学んできました。<br>
+            Webサイト制作、LP制作、簡単なアプリ開発をしています。<br>
+            趣味は、ギターと筋トレと麻雀と映画鑑賞です。
+          </p>
+        </div>
+      </section>
+      <!-- Works -->
+      <section id="works" class="works inner">
+        <h2 class="title">WORKS</h2>
+        <p class="subtitle">- WEBサイト制作 -</p>
+        <ul>
+          <li class="works-li heading">
+            <a href="html/ryokan/index.html">
+              <img src="img/ryokan.png" alt="">
+              <p class="works-li__text">
+                旅館のHP制作
+              </p>
+            </a>
+          </li>
+          <li class="works-li heading">
+            <a href="html/enji/index.html">
+              <img src="img/enji.png" alt="">
+              <p class="works-li__text">WEB会社のHP制作</p>
+            </a>
+          </li>
+          <li class="works-li  heading">
+            <a href="html/Sneokers">
+              <img src="img/sneokers.png" alt="">
+              <p class="works-li__text">靴のショップのHP制作</p>
+            </a>
+          </li>
+        </ul>
+      </section>
+      <!-- Contact -->
+      <section id="contact" class="contact inner">
+        <h2 class="title">CONTACT</h2>
+        <p class="subtitle">- お問い合わせ -</p>
+        <form id="form"
+          action="https://docs.google.com/forms/u/1/d/e/1FAIpQLSeQSOUECRLbbe_GzmCQwBLpoU0v1LDgAkwobWNQtkAj_vr9yQ/formResponse"
+          method="POST" class="heading">
+          <label for="name"><i class="fa-solid fa-cat"></i>お名前</label>
+          <input name="entry.2005620554" type="text" placeholder="名前">
+          <label for="email"><i class="fa-regular fa-envelope"></i>メールアドレス</label>
+          <input name="entry.1045781291" type="email" placeholder="メールアドレス">
+          <label for="textarea"><i class="fa-regular fa-comment-dots"></i>お問い合せ内容</label>
+          <textarea name="entry.839337160" placeholder="お問合せ内容"></textarea>
+          <input type="submit" class="btn">
+        </form>
+
+      </section>
+    </div>
+  </main>
+  <script src="js/main.js"></script>
+</body>
+
+</html>
