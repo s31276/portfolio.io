@@ -243,7 +243,7 @@ textarea {
     top: 50px;
     opacity: 0; } }
 .about__textbox {
-  text-align-last: left;
+  text-align: left;
   padding: 32px 16px;
   line-height: 3rem;
   letter-spacing: .25rem; }
